@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                         cityName=city;
                     }else {
                         Log.d("TAG","City not found");
-                        Toast.makeText(this, "User City not found...", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(this, "User City not found...", Toast.LENGTH_SHORT).show(); check this portion again
                     }
                 }
             }
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
     //here I am passing the city name to get the weather info and parsing the data from our API
     private void getWeatherInfo(String cityName){
         //using the below URL for json parsing
-        String url = "https://api.weatherapi.com/v1/current.json?key=ee21fc1d0b804ca4ab7203645222212&q="+cityName+"&aqi=no";
+        String url = "https://api.weatherapi.com/v1/forecast.json?key=ee21fc1d0b804ca4ab7203645222212&q="+cityName+"&days=1&aqi=yes&alerts=yes";
         cityNameTV.setText(cityName);
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
 
@@ -181,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray hourArray = forecastO.getJSONArray("hour");
 
                     for(int i=0; i<hourArray.length(); i++){
+
                         JSONObject hourObj = hourArray.getJSONObject(i);
                         String time = hourObj.getString("time");
                         String temper = hourObj.getString("temp_c");
