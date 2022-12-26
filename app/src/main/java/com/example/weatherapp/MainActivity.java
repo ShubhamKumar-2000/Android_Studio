@@ -23,6 +23,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -142,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
     //here I am passing the city name to get the weather info and parsing the data from our API
     private void getWeatherInfo(String cityName){
         //using the below URL for json parsing
-        String url = "http://api.weatherapi.com/v1/forecast.json?key=ee21fc1d0b804ca4ab7203645222212&q="+cityName+"&days=1&aqi=no&alerts=no";
+        String url = "https://api.weatherapi.com/v1/current.json?key=ee21fc1d0b804ca4ab7203645222212&q="+cityName+"&aqi=no";
         cityNameTV.setText(cityName);
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
 
@@ -201,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Please enter valid city name...", Toast.LENGTH_SHORT).show();
                 Log.d("TAG", "onErrorResponse: " + error.getMessage());
                 System.out.println("Check");
+
             }
         });
 
