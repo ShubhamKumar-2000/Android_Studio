@@ -194,11 +194,13 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(MainActivity.this, "Please enter valid city name...", Toast.LENGTH_SHORT).show();
                 Log.d("TAG", "onErrorResponse: " + error.getMessage());
+                System.out.println("Check");
             }
         });
 
