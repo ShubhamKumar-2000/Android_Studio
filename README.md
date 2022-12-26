@@ -1,5 +1,6 @@
 # Android_Studio
-Android Studio Project Practice
-I have ceated an Weather forecast appliation using Java currently I am working on this, Application is having some problem regarding fetching the data from weather API.
-I have used Volley for JSON parsing this section might have some issues, if anyone can solve this it would be helpful.
-Thanks
+Weather forecast application
+I have created this application using Java langauge and Designing is done via XML.
+I have used Volley for JSON parsing and getting weather information from weatherapi.com.
+This application will access your GPS and provide current weather status, temperature, current weather conditiom and hourly weather forecast of the whole day which includes temperature and wind speed.
+This app also have manual search feature through which you can get weather information about any place in the world.
